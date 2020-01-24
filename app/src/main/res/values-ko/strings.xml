@@ -2,5 +2,12 @@
 <resources>
         <string name="app_name">AndroidLabs1</string>
         <string name="hello_message">안녕</string>
-        <string name="ButtonText">I\’m a button</string>
+        <string name="ButtonText">나는 버튼이다</string>
+        <string name="GUI">내 GUI를 보렴</string>
+        <string name="Click">여기 눌러!</string>
+        <string name="Check">확인해봐!</string>
+        <string name="Switch">변환 하기 / 안하기</string>
+        <string name="Type">여기에 적어</string>
+        <string name="flag">한국 국기</string>
+        <string name="toast_message">더 많은 정보가 여기 있어</string>
 </resources>
