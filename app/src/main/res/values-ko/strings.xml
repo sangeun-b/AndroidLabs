@@ -10,4 +10,15 @@
         <string name="Type">여기에 적어</string>
         <string name="flag">한국 국기</string>
         <string name="toast_message">더 많은 정보가 여기 있어</string>
+        <string name="Lab3t1">이메일 입력:</string>
+        <string name="Lab3e1">여기에 이메일을 적으세요</string>
+        <string name="Lab3t2">비밀번호 입력:</string>
+        <string name="Lab3b1">로그인</string>
+        <string name="Lab3te1">프로필</string>
+        <string name="Lab3te2">이름</string>
+        <string name="Lab3ed1">이름을 적으세요</string>
+        <string name="Lab3te3">이메일:</string>
+        <string name="Lab3ed2">이메일을 적으세요</string>
+        <string name="Lab3te4">사진:</string>
+        <string name="Lab3te5">사진을 찍으려면 버튼을 누르세요</string>
 </resources>

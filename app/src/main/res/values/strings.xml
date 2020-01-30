@@ -9,4 +9,16 @@
     <string name="Type">Type here</string>
     <string name="flag">Canadian flag</string>
     <string name="toast_message">Here is more information</string>
+    <string name="Lab3t1">Enter your email address:</string>
+    <string name="Lab3e1">Type email here</string>
+    <string name="Lab3t2">Type your password:</string>
+    <string name="Lab3b1">LOGIN</string>
+    <string name="Lab3te1">Your profile</string>
+    <string name="Lab3te2">Your name:</string>
+    <string name="Lab3ed1">Enter you name</string>
+    <string name="Lab3te3">Your email:</string>
+    <string name="Lab3ed2">Enter you email</string>
+    <string name="Lab3te4">Your picture:</string>
+    <string name="Lab3te5">Click the button above to take a picture:</string>
+
 </resources>

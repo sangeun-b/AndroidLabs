@@ -2,10 +2,14 @@ package com.example.androidlabs1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
@@ -13,46 +17,41 @@ import android.widget.CheckBox;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_relative);
+        setContentView(R.layout.activity_main_lab3);
 
-       Button bu2 = (Button) findViewById(R.id.button2);
-        bu2.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, getResources().getString(R.string.toast_message), Toast.LENGTH_LONG).show();
-            }
-        });
-        Switch sw2 = (Switch) findViewById((R.id.switch2));
-        sw2.setOnCheckedChangeListener( (sw, isChecked) -> {
-            if(isChecked==true){
-                Snackbar.make( sw,"This switch is now on", Snackbar.LENGTH_LONG).
-                setAction("undo", click -> sw2.setChecked(!isChecked)).show();
+        EditText email1 = (EditText) findViewById(R.id.e1);
+        //EditText pass = (EditText) findViewById(R.id.ed2);
 
-            }else if(isChecked==false) {
-                Snackbar.make( sw,"This switch is now off", Snackbar.LENGTH_LONG)
-                .setAction("undo", click -> sw2.setChecked(!isChecked)).show();
+        SharedPreferences prefs = getSharedPreferences("PR", Context.MODE_PRIVATE);
+        String s1 = prefs.getString("ReserveName", "");
+        email1.setText(s1);
 
 
-            }
+
+        Button login = (Button)findViewById(R.id.b1);
+        login.setOnClickListener(bt -> {
+            Intent goToProfile  = new Intent(MainActivity.this,ProfileActivity.class);
+            goToProfile.putExtra("EMAIL",email1.getText().toString());
+
+            startActivity(goToProfile);
         });
 
 
-            CheckBox ck2 = (CheckBox) findViewById((R.id.checkbox2));
-            ck2.setOnCheckedChangeListener( (ck, isChecked2) -> {
-                if(isChecked2==true){
-                    Snackbar.make( ck,"This check is now on", Snackbar.LENGTH_LONG).
-                            setAction("undo", click -> ck2.setChecked(!isChecked2)).show();
 
-                }else if(isChecked2==false) {
-                    Snackbar.make( ck,"This check is now off", Snackbar.LENGTH_LONG)
-                            .setAction("undo", click -> ck2.setChecked(!isChecked2)).show();
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        EditText email1 = (EditText) findViewById(R.id.e1);
 
-
-                }
-                });
-
-        }
+        SharedPreferences prefs = getSharedPreferences("PR",Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putString("ReserveName",email1.getText().toString());
+        edit.commit();
+    }
 }
 
