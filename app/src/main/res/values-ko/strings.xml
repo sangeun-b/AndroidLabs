@@ -21,4 +21,14 @@
         <string name="Lab3ed2">이메일을 적으세요</string>
         <string name="Lab3te4">사진:</string>
         <string name="Lab3te5">사진을 찍으려면 버튼을 누르세요</string>
+        <string name="Lab4chat">대화하기</string>
+        <string name="Lab4send">보내기</string>
+        <string name="Lab4rev">받기</string>
+        <string name="Lab4type">여기에 쓰세요</string>
+
+        <string name="delete">삭제하시겠습니까?</string>
+        <string name="select">선택된 줄 : </string>
+        <string name="db">데이터베이스 아이디:</string>
+        <string name="y">예</string>
+        <string name="n">아니오</string>
 </resources>

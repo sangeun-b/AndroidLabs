@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -30,6 +31,20 @@ public class ProfileActivity extends AppCompatActivity {
 
         mImageButton = (ImageButton) findViewById(R.id.ib1);
         mImageButton.setOnClickListener(bt -> dispatchTakePictureIntent());
+
+        // Button login = (Button)findViewById(R.id.b1);
+        //        login.setOnClickListener(bt -> {
+        //            Intent goToProfile  = new Intent(MainActivity.this,ProfileActivity.class);
+        //            goToProfile.putExtra("EMAIL",email1.getText().toString());
+        //
+        //            startActivity(goToProfile);
+        //        });
+
+        Button chatroom = (Button)findViewById(R.id.ch);
+        chatroom.setOnClickListener(btn -> {
+            Intent goToChat = new Intent(ProfileActivity.this,ChatRoomActivity.class);
+            startActivity(goToChat);
+        } );
 
         Log.e(ACTIVITY_NAME, "In function:" + "onCreate");
 

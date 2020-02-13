@@ -61,5 +61,11 @@
         android:id="@+id/te5"
         android:text="@string/Lab3te5"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ch"
+        android:text="@string/Lab4chat"
+/>
 
 </LinearLayout >
