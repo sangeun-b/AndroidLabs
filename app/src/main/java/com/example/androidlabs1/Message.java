@@ -6,28 +6,24 @@ import android.os.Bundle;
 
 public class Message extends AppCompatActivity {
 
-    private String message;
-    private boolean sendMessage;
+    protected String message;
+    protected boolean isSent;
+    protected long id;
 
     public Message(){
 
     }
-    public Message(boolean sendMessage, String message){
-        this.sendMessage=sendMessage;
+    public Message(long id, String message, boolean isSent){
+        this.isSent=isSent;
         this.message=message;
+        this.id=id;
     }
-    public boolean isSendMessage(){
-        return sendMessage;
+    public boolean isSent(){
+        return isSent;
     }
     public String getMessage(){
         return message;
     }
-    public void setMessage(String message){
-        this.message=message;
-    }
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
-    }*/
+    public long getId(){ return id;  }
+
 }

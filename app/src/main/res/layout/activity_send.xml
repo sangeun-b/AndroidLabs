@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sendTextView"
-        android:layout_toRightOf="@+id/icon_send"/>
+        android:layout_toRightOf="@+id/icon_send"
+        />
     //android:drawableLeft="@drawable/row_receive"
 
 </RelativeLayout>
