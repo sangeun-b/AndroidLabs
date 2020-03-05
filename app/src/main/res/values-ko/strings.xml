@@ -31,4 +31,10 @@
         <string name="db">데이터베이스 아이디:</string>
         <string name="y">예</string>
         <string name="n">아니오</string>
+
+        <string name="Lab6button">날씨 확인</string>
+        <string name="Lab6te1">현재 기온:</string>
+        <string name="Lab6te2">최저 기온:</string>
+        <string name="Lab6te3">최고 기온:</string>
+        <string name="Lab6te4">자외선 수치:</string>
 </resources>

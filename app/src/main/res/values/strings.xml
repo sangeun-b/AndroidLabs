@@ -29,5 +29,10 @@
     <string name="db">The database id:</string>
     <string name="y">Yes</string>
     <string name="n">No</string>
+    <string name="Lab6button">Check weather</string>
+    <string name="Lab6te1">Current Temperature: </string>
+    <string name="Lab6te2">Min Temperature: </string>
+    <string name="Lab6te3">Max Temperature: </string>
+    <string name="Lab6te4">UV rating: </string>
 
 </resources>
