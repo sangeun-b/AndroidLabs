@@ -53,7 +53,7 @@ public class WeatherForecast extends AppCompatActivity {
         forQuery.execute();
 
         progress = (ProgressBar) findViewById(R.id.progress1) ;
-        progress.setProgress(View.VISIBLE);
+        progress.setVisibility(View.VISIBLE);
     }
     private class ForecastQuery extends AsyncTask<String, Integer, String> {
         String uv;
