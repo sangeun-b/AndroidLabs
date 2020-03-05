@@ -87,7 +87,7 @@ public class WeatherForecast extends AppCompatActivity {
 
                         } else if (xpp.getName().equals("weather")) {
                             String icon = xpp.getAttributeValue(null, "icon");
-                            if (fileExistance(icon+".png")) {
+                            if (!fileExistance(icon+".png")) {
                                 FileInputStream fis = null;
                                 try {
                                     fis = openFileInput(icon+".png");
@@ -105,6 +105,7 @@ public class WeatherForecast extends AppCompatActivity {
                                 if (responseCode == 200) {
                                     image = BitmapFactory.decodeStream(connection.getInputStream());
                                 }
+
                                 Log.i("Found","Found image from URL and download it");
 
                                 FileOutputStream outputStream = openFileOutput(icon + ".png", Context.MODE_PRIVATE);
@@ -155,6 +156,7 @@ public class WeatherForecast extends AppCompatActivity {
                 maxTempTextView.setText(getString(R.string.Lab6te3) +maxTemp);
                 uvTextView.setText(getString(R.string.Lab6te4)+uv);
                 weatherImageView.setImageBitmap(image);
+
 
                 progress.setVisibility(View.INVISIBLE);
                 Log.i("Http", fromDoInBackground);
