@@ -24,8 +24,8 @@
         android:inputType="textEmailAddress"
         android:nextFocusDown="@id/e1"
         android:nextFocusUp="@id/e2"
-        android:nextFocusRight="@id/t1"
-        android:nextFocusLeft="@id/t2"
+        android:nextFocusRight="@id/e1"
+        android:nextFocusLeft="@id/e2"
 
     />
 
@@ -43,8 +43,8 @@
         android:inputType="textPassword"
         android:nextFocusDown="@id/b1"
         android:nextFocusUp="@id/e1"
-        android:nextFocusRight="@id/t1"
-        android:nextFocusLeft="@id/t2"
+        android:nextFocusRight="@id/b1"
+        android:nextFocusLeft="@id/e1"
 
         />
     <Button
@@ -54,8 +54,8 @@
         android:text="@string/Lab3b1"
         android:nextFocusDown="@id/e1"
         android:nextFocusUp="@id/e2"
-        android:nextFocusRight="@id/t1"
-        android:nextFocusLeft="@id/t2"
+        android:nextFocusRight="@id/e1"
+        android:nextFocusLeft="@id/e2"
         />
 
 

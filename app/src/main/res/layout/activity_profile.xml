@@ -34,9 +34,9 @@
         android:layout_height="wrap_content"
         android:hint="@string/Lab3ed1"
         android:nextFocusDown="@id/ed2"
-        android:nextFocusUp="@id/ed1"
-        android:nextFocusRight="@id/te2"
-        android:nextFocusLeft="@id/te3"
+        android:nextFocusUp="@id/we"
+        android:nextFocusRight="@id/ed2"
+        android:nextFocusLeft="@id/we"
         />
 
     <TextView
@@ -53,8 +53,8 @@
         android:hint="@string/Lab3ed2"
         android:nextFocusDown="@id/ib1"
         android:nextFocusUp="@id/ed1"
-        android:nextFocusRight="@id/te3"
-        android:nextFocusLeft="@id/te4"
+        android:nextFocusRight="@id/ib1"
+        android:nextFocusLeft="@id/ed1"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -69,8 +69,8 @@
         android:src="@android:drawable/picture_frame"
         android:nextFocusDown="@id/ch"
         android:nextFocusUp="@id/ed2"
-        android:nextFocusRight="@id/te1"
-        android:nextFocusLeft="@id/te2"
+        android:nextFocusRight="@id/ch"
+        android:nextFocusLeft="@id/ed2"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -85,8 +85,8 @@
         android:text="@string/Lab4chat"
         android:nextFocusDown="@id/we"
         android:nextFocusUp="@id/ib1"
-        android:nextFocusRight="@id/te1"
-        android:nextFocusLeft="@id/te2"
+        android:nextFocusRight="@id/we"
+        android:nextFocusLeft="@id/ib1"
      />
     <Button
         android:layout_width="match_parent"
@@ -95,8 +95,8 @@
         android:text="@string/Lab6button"
         android:nextFocusDown="@id/ed1"
         android:nextFocusUp="@id/ch"
-        android:nextFocusRight="@id/te1"
-        android:nextFocusLeft="@id/te2"
+        android:nextFocusRight="@id/ed1"
+        android:nextFocusLeft="@id/ch"
         />
 
 </LinearLayout >
