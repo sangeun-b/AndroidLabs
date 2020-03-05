@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,6 +22,11 @@
         android:id="@+id/e1"
         android:hint="@string/Lab3e1"
         android:inputType="textEmailAddress"
+        android:nextFocusDown="@id/e1"
+        android:nextFocusUp="@id/e2"
+        android:nextFocusRight="@id/t1"
+        android:nextFocusLeft="@id/t2"
+
     />
 
     <TextView
@@ -31,6 +41,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/e2"
         android:inputType="textPassword"
+        android:nextFocusDown="@id/b1"
+        android:nextFocusUp="@id/e1"
+        android:nextFocusRight="@id/t1"
+        android:nextFocusLeft="@id/t2"
 
         />
     <Button
@@ -38,6 +52,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/b1"
         android:text="@string/Lab3b1"
+        android:nextFocusDown="@id/e1"
+        android:nextFocusUp="@id/e2"
+        android:nextFocusRight="@id/t1"
+        android:nextFocusLeft="@id/t2"
         />
 
 

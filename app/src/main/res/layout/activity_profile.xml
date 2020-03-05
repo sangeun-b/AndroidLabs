@@ -5,7 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,6 +33,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Lab3ed1"
+        android:nextFocusDown="@id/ed2"
+        android:nextFocusUp="@id/ed1"
+        android:nextFocusRight="@id/te2"
+        android:nextFocusLeft="@id/te3"
         />
 
     <TextView
@@ -42,6 +51,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/ed2"
         android:hint="@string/Lab3ed2"
+        android:nextFocusDown="@id/ib1"
+        android:nextFocusUp="@id/ed1"
+        android:nextFocusRight="@id/te3"
+        android:nextFocusLeft="@id/te4"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -54,6 +67,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/ib1"
         android:src="@android:drawable/picture_frame"
+        android:nextFocusDown="@id/ch"
+        android:nextFocusUp="@id/ed2"
+        android:nextFocusRight="@id/te1"
+        android:nextFocusLeft="@id/te2"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -66,12 +83,20 @@
         android:layout_height="wrap_content"
         android:id="@+id/ch"
         android:text="@string/Lab4chat"
+        android:nextFocusDown="@id/we"
+        android:nextFocusUp="@id/ib1"
+        android:nextFocusRight="@id/te1"
+        android:nextFocusLeft="@id/te2"
      />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/we"
         android:text="@string/Lab6button"
+        android:nextFocusDown="@id/ed1"
+        android:nextFocusUp="@id/ch"
+        android:nextFocusRight="@id/te1"
+        android:nextFocusLeft="@id/te2"
         />
 
 </LinearLayout >
