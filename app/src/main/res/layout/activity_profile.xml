@@ -11,7 +11,7 @@
         android:layout_width="100dp"
         android:layout_height="10dp"
         android:id="@+id/te1"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:text="@string/Lab3te1"
 
         />
@@ -20,7 +20,7 @@
         android:layout_width="100dp"
         android:layout_height="10dp"
         android:id="@+id/te2"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:text="@string/Lab3te2"
 
         />
@@ -30,7 +30,7 @@
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:hint="@string/Lab3ed1"
-        android:textSize="10dp"
+        android:textSize="8dp"
         />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_height="10dp"
         android:id="@+id/te3"
         android:text="@string/Lab3te3"
-        android:textSize="10dp"
+        android:textSize="8dp"
         />
 
     <EditText
@@ -46,40 +46,40 @@
         android:layout_height="30dp"
         android:id="@+id/ed2"
         android:hint="@string/Lab3ed2"
-        android:textSize="10dp"
+        android:textSize="8dp"
         />
     <TextView
         android:layout_width="100dp"
         android:layout_height="10dp"
         android:id="@+id/te4"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:text="@string/Lab3te4"
         />
     <ImageButton
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:id="@+id/ib1"
         android:src="@android:drawable/picture_frame"
         />
     <TextView
-        android:layout_width="200dp"
-        android:layout_height="15dp"
+        android:layout_width="150dp"
+        android:layout_height="10dp"
         android:id="@+id/te5"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:text="@string/Lab3te5"
         />
     <Button
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:id="@+id/ch"
-        android:textSize="10dp"
+        android:textSize="5dp"
         android:text="@string/Lab4chat"
      />
     <Button
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:id="@+id/we"
-        android:textSize="10dp"
+        android:textSize="5dp"
         android:text="@string/Lab6button"
         />
 
