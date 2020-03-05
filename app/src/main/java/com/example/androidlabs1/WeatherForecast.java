@@ -87,7 +87,7 @@ public class WeatherForecast extends AppCompatActivity {
 
                         } else if (xpp.getName().equals("weather")) {
                             String icon = xpp.getAttributeValue(null, "icon");
-                            if (fileExistance(icon+".png")) {
+                            if (!fileExistance(icon+".png")) {
                                 FileInputStream fis = null;
                                 try {
                                     fis = openFileInput(icon+".png");
