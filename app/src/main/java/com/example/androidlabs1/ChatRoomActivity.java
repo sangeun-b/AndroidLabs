@@ -33,6 +33,7 @@ public class ChatRoomActivity extends AppCompatActivity {
     public static final String MESSAGE_ID="Id";
     public static final String MESSAGE_POSITION="Position";
     public static final String MESSAGE_TYPE="Type";
+    DetailsFragment dFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         EditText chatEdit = (EditText) findViewById(R.id.type);
 
         boolean isTablet = findViewById(R.id.fragmentLocation) != null;
+
 
 
         sendButton.setOnClickListener(bt -> {
@@ -81,30 +83,16 @@ public class ChatRoomActivity extends AppCompatActivity {
         });
         //int selectedMessage = messageListView.getId();
 
-        messageListView.setOnItemLongClickListener((parent, view, position, id) -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(getString(R.string.delete))
-                    .setMessage(getString(R.string.select) + (position + 1) + "\n" + getString(R.string.db) + id)
-                    .setPositiveButton(getString(R.string.y), (click, arg) -> {
-                        db.delete(TABLE_NAME, COL_ID + "=?", new String[]{Long.toString(id)});
-                        messageArray.remove(position);
-                        myAdapter.notifyDataSetChanged();
 
-                    })
-                    .setNegativeButton(getString(R.string.n), (click, arg) -> {
-
-                    }).create().show();
-            return true;
-        });
         messageListView.setOnItemClickListener((list,view,pos,id)->{
             Bundle dataToPass = new Bundle();
             dataToPass.putString(MESSAGE_SELECTED, messageArray.get(pos).getMessage());
             //dataToPass.putInt(MESSAGE_POSITION, pos);
             dataToPass.putLong(MESSAGE_ID, messageArray.get(pos).getId());
-            dataToPass.putString(MESSAGE_TYPE,messageArray.get(pos).isSent()?"1":"0");
+            dataToPass.putBoolean(MESSAGE_TYPE, messageArray.get(pos).isSent());
 
             if(isTablet) {
-                DetailsFragment dFragment = new DetailsFragment(); //add a DetailFragment
+                dFragment = new DetailsFragment();//add a DetailFragment
                 dFragment.setArguments(dataToPass);//pass it a bundle for information
                 getSupportFragmentManager()
                         .beginTransaction()
@@ -115,6 +103,24 @@ public class ChatRoomActivity extends AppCompatActivity {
                 nextActivity.putExtras(dataToPass); //send data to next activity
                 startActivity(nextActivity); //make the transition
             }
+        });
+        messageListView.setOnItemLongClickListener((parent, view, position, id) -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(getString(R.string.delete))
+                    .setMessage(getString(R.string.select) + (position + 1) + "\n" + getString(R.string.db) + id)
+                    .setPositiveButton(getString(R.string.y), (click, arg) -> {
+                        db.delete(TABLE_NAME, COL_ID + "=?", new String[]{Long.toString(id)});
+                        messageArray.remove(position);
+                        if(isTablet) {
+                            getSupportFragmentManager().beginTransaction().remove(dFragment).commit();
+                        }
+                        myAdapter.notifyDataSetChanged();
+
+                    })
+                    .setNegativeButton(getString(R.string.n), (click, arg) -> {
+
+                    }).create().show();
+            return true;
         });
 
 

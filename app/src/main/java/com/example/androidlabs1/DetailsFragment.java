@@ -39,18 +39,13 @@ public class DetailsFragment extends Fragment {
         messageId.setText("ID=" + id);
 
         CheckBox type = result.findViewById(R.id.lab7ck1);
-        if(ChatRoomActivity.MESSAGE_TYPE=="1"){
-            type.setChecked(true);
-        }else if(ChatRoomActivity.MESSAGE_TYPE=="0"){
-            type.setChecked(false);
-        }
+        type.setChecked(dataFromActivity.getBoolean(ChatRoomActivity.MESSAGE_TYPE));
         Button hideButton = (Button)result.findViewById(R.id.lab7b1);
         hideButton.setOnClickListener( clk -> {
 
             //Tell the parent activity to remove
             if(isTablet) {
                 ChatRoomActivity parent = (ChatRoomActivity) getActivity();
-
                 parent.getSupportFragmentManager().beginTransaction().remove(this).commit();
             }else{
                 EmptyActivity parent = (EmptyActivity) getActivity();
