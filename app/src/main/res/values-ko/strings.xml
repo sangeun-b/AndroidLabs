@@ -37,4 +37,9 @@
         <string name="Lab6te2">최저 기온:</string>
         <string name="Lab6te3">최고 기온:</string>
         <string name="Lab6te4">자외선 수치:</string>
+
+        <string name="here">여기 메세지가 있습니다</string>
+        <string name="id">아이디=</string>
+        <string name="isSend">보낸 메세지 입니다</string>
+        <string name="hide">숨기기</string>
 </resources>

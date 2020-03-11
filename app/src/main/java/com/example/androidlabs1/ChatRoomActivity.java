@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -28,7 +29,10 @@ public class ChatRoomActivity extends AppCompatActivity {
     BaseAdapter myAdapter;
     SQLiteDatabase db;
     public static final String ACTIVITY_NAME="ChatRoomActivity";
-    //Cursor result;
+    public static final String MESSAGE_SELECTED="Message";
+    public static final String MESSAGE_ID="Id";
+    public static final String MESSAGE_POSITION="Position";
+    public static final String MESSAGE_TYPE="Type";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,8 @@ public class ChatRoomActivity extends AppCompatActivity {
         messageListView.setAdapter(myAdapter);
 
         EditText chatEdit = (EditText) findViewById(R.id.type);
+
+        boolean isTablet = findViewById(R.id.fragmentLocation) != null;
 
 
         sendButton.setOnClickListener(bt -> {
@@ -88,9 +94,30 @@ public class ChatRoomActivity extends AppCompatActivity {
                     .setNegativeButton(getString(R.string.n), (click, arg) -> {
 
                     }).create().show();
-
             return true;
         });
+        messageListView.setOnItemClickListener((list,view,pos,id)->{
+            Bundle dataToPass = new Bundle();
+            dataToPass.putString(MESSAGE_SELECTED, messageArray.get(pos).getMessage());
+            dataToPass.putInt(MESSAGE_POSITION, pos);
+            dataToPass.putLong(MESSAGE_ID, messageArray.get(pos).getId());
+            dataToPass.putString(MESSAGE_TYPE,messageArray.get(pos).isSent()?"1":"0");
+
+            if(isTablet) {
+                DetailsFragment dFragment = new DetailsFragment(); //add a DetailFragment
+                dFragment.setArguments(dataToPass);//pass it a bundle for information
+                dFragment.setTablet(true);
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout
+                        .commit();
+            }else{
+                Intent nextActivity = new Intent(ChatRoomActivity.this, EmptyActivity.class);
+                nextActivity.putExtras(dataToPass); //send data to next activity
+                startActivity(nextActivity); //make the transition
+            }
+        });
+
 
         String[] columns = {MyOpener.COL_ID, MyOpener.COL_MESSAGE, MyOpener.COL_IS_SEND};
         Cursor c = db.query(false, MyOpener.TABLE_NAME, columns, null, null, null, null, null, null);

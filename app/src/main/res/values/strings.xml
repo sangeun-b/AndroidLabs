@@ -35,4 +35,10 @@
     <string name="Lab6te3">Max Temperature: </string>
     <string name="Lab6te4">UV rating: </string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="here">Message Here</string>
+    <string name="id">ID=</string>
+    <string name="isSend">Is a Send Message</string>
+    <string name="hide">HIDE</string>
+
 </resources>

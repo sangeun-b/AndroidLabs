@@ -7,13 +7,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/icon_receive"
         android:src="@drawable/row_receive"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/receiveTextView"
-        android:layout_toLeftOf="@+id/icon_receive"
+        android:layout_toRightOf="@+id/icon_receive"
         />
         //android:drawableLeft="@drawable/row_receive"
 </RelativeLayout>

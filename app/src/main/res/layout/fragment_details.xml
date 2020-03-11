@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentLocation">
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/lab7t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/here"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/lab7t2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lab7t1"
+        android:text="@string/id"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:id="@+id/lab7ck1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lab7t2"
+        android:text="@string/isSend" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/hide"
+        android:id="@+id/lab7b1"
+        />
+    <!--android:layout_gravity="bottom"-->
+</RelativeLayout>
