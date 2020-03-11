@@ -99,14 +99,13 @@ public class ChatRoomActivity extends AppCompatActivity {
         messageListView.setOnItemClickListener((list,view,pos,id)->{
             Bundle dataToPass = new Bundle();
             dataToPass.putString(MESSAGE_SELECTED, messageArray.get(pos).getMessage());
-            dataToPass.putInt(MESSAGE_POSITION, pos);
+            //dataToPass.putInt(MESSAGE_POSITION, pos);
             dataToPass.putLong(MESSAGE_ID, messageArray.get(pos).getId());
             dataToPass.putString(MESSAGE_TYPE,messageArray.get(pos).isSent()?"1":"0");
 
             if(isTablet) {
                 DetailsFragment dFragment = new DetailsFragment(); //add a DetailFragment
                 dFragment.setArguments(dataToPass);//pass it a bundle for information
-                dFragment.setTablet(true);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout

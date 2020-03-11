@@ -16,7 +16,6 @@ public class EmptyActivity extends AppCompatActivity {
         //This is copied directly from FragmentExample.java lines 47-54
         DetailsFragment dFragment = new DetailsFragment(); //add a DetailFragment
         dFragment.setArguments(dataToPass);//pass it a bundle for information
-        dFragment.setTablet(true);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout
