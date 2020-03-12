@@ -31,7 +31,6 @@ public class ChatRoomActivity extends AppCompatActivity {
     public static final String ACTIVITY_NAME="ChatRoomActivity";
     public static final String MESSAGE_SELECTED="Message";
     public static final String MESSAGE_ID="Id";
-    public static final String MESSAGE_POSITION="Position";
     public static final String MESSAGE_TYPE="Type";
     DetailsFragment dFragment;
 
@@ -94,6 +93,7 @@ public class ChatRoomActivity extends AppCompatActivity {
             if(isTablet) {
                 dFragment = new DetailsFragment();//add a DetailFragment
                 dFragment.setArguments(dataToPass);//pass it a bundle for information
+                dFragment.setTablet(true);
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragmentLocation, dFragment) //Add the fragment in FrameLayout
