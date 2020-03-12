@@ -104,6 +104,7 @@ public class ChatRoomActivity extends AppCompatActivity {
                 startActivity(nextActivity); //make the transition
             }
         });
+
         messageListView.setOnItemLongClickListener((parent, view, position, id) -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(getString(R.string.delete))
@@ -114,6 +115,7 @@ public class ChatRoomActivity extends AppCompatActivity {
                         if(isTablet) {
                             getSupportFragmentManager().beginTransaction().remove(dFragment).commit();
                         }
+
                         myAdapter.notifyDataSetChanged();
 
                     })

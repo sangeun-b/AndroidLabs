@@ -32,13 +32,6 @@ public class ProfileActivity extends AppCompatActivity {
         mImageButton = (ImageButton) findViewById(R.id.ib1);
         mImageButton.setOnClickListener(bt -> dispatchTakePictureIntent());
 
-        // Button login = (Button)findViewById(R.id.b1);
-        //        login.setOnClickListener(bt -> {
-        //            Intent goToProfile  = new Intent(MainActivity.this,ProfileActivity.class);
-        //            goToProfile.putExtra("EMAIL",email1.getText().toString());
-        //
-        //            startActivity(goToProfile);
-        //        });
 
         Button chatroom = (Button)findViewById(R.id.ch);
         chatroom.setOnClickListener(btn -> {

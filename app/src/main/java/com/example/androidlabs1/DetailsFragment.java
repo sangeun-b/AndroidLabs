@@ -1,7 +1,11 @@
 package com.example.androidlabs1;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -19,6 +23,7 @@ public class DetailsFragment extends Fragment {
     private Bundle dataFromActivity;
     private long id;
     private boolean isTablet;
+    private AppCompatActivity parentActivity;
     public DetailsFragment() {
         // Required empty public constructor
     }
@@ -44,17 +49,27 @@ public class DetailsFragment extends Fragment {
         hideButton.setOnClickListener( clk -> {
 
             //Tell the parent activity to remove
-            if(isTablet) {
-                ChatRoomActivity parent = (ChatRoomActivity) getActivity();
-                parent.getSupportFragmentManager().beginTransaction().remove(this).commit();
-            }else{
-                EmptyActivity parent = (EmptyActivity) getActivity();
-                parent.getSupportFragmentManager().beginTransaction().remove(this).commit();
+
+                //ChatRoomActivity parentActivity = (ChatRoomActivity) getActivity();
+                parentActivity.getSupportFragmentManager().beginTransaction().remove(this).commit();
+            if(!isTablet) {
+
+                EmptyActivity parentActivity = (EmptyActivity) getActivity();
+                Intent previousActivity = new Intent();
+                previousActivity.putExtra("id",id);
+                parentActivity.setResult(Activity.RESULT_OK,previousActivity);
+                parentActivity.finish();
             }
         });
+
 
         return result;
 
 
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        parentActivity = (AppCompatActivity) context;
     }
 }
