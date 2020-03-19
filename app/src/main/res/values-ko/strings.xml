@@ -42,4 +42,9 @@
         <string name="id">아이디=</string>
         <string name="isSend">보낸 메세지 입니다</string>
         <string name="hide">숨기기</string>
+
+        <string name="toolbar">툴바</string>
+        <string name="icon1">번역</string>
+        <string name="icon2">사진</string>
+        <string name="icon3">검색</string>
 </resources>

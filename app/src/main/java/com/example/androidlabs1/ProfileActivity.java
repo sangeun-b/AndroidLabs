@@ -45,10 +45,16 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(goToWeather);
         });
 
+        Button toolbarbtn = (Button)findViewById(R.id.toolbutton);
+        toolbarbtn.setOnClickListener(btn->{
+            Intent goToolBar = new Intent(ProfileActivity.this, TestToolbar.class);
+            startActivity(goToolBar);
+            //startActivityForResult(goToolBar, 1);
+        });
+
         Log.e(ACTIVITY_NAME, "In function:" + "onCreate");
 
     }
-
 
 
     private void dispatchTakePictureIntent() {

@@ -40,5 +40,9 @@
     <string name="id">ID=</string>
     <string name="isSend">Is a Send Message</string>
     <string name="hide">HIDE</string>
+    <string name="toolbar">Go to Toolbar Page</string>
+    <string name="icon1">translate</string>
+    <string name="icon2">photo</string>
+    <string name="icon3">search</string>
 
 </resources>

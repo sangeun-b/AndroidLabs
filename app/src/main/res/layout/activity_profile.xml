@@ -73,5 +73,11 @@
         android:id="@+id/we"
         android:text="@string/Lab6button"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbutton"
+        android:text="@string/toolbar"
+        />
 
 </LinearLayout >

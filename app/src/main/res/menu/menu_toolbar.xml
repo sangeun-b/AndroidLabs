@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/transItem"
+        android:title="@string/icon1"
+        android:icon="@drawable/icon1"
+        android:orderInCategory="50"
+        app:showAsAction="always"/>  <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+
+    <item android:id="@+id/photoItem"
+        android:orderInCategory="100"
+        android:icon="@drawable/icon2"
+        app:showAsAction="always"
+        android:title="@string/icon2"/>    <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+
+    <item android:id="@+id/searchItem"
+        android:icon="@drawable/icon3"
+        android:title="search"
+        app:showAsAction="always"
+        android:orderInCategory="150"
+        app:actionViewClass="android.widget.SearchView"/> <!-- This uses showAsAction=never, so look at title= parameter -->
+
+    <item android:id="@+id/textItem"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="About"/>s
+</menu>
