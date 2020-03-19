@@ -47,4 +47,10 @@
         <string name="icon1">번역</string>
         <string name="icon2">사진</string>
         <string name="icon3">검색</string>
+
+        <string name="item1">채팅창</string>
+        <string name="item2">날씨예보</string>
+        <string name="item3">로그인</string>
+        <string name="open">열기</string>
+        <string name="close">닫기</string>
 </resources>

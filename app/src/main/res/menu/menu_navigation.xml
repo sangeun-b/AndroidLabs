@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/chatPage"
+        android:title="@string/item1" />  <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+
+    <item android:id="@+id/weatherPage"
+        android:title="@string/item2"/>    <!-- This uses showAsAction=always, so look at icon= parameter -->
+
+
+    <item android:id="@+id/loginPage"
+        android:title="@string/item3"
+       /> <!-- This uses showAsAction=never, so look at title= parameter -->
+
+
+</menu>

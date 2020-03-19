@@ -1,15 +1,21 @@
 package com.example.androidlabs1;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class TestToolbar extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class TestToolbar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,15 @@ public class TestToolbar extends AppCompatActivity {
         Toolbar tBar = (Toolbar)findViewById(R.id.toolbar);
 
         setSupportActionBar(tBar);
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
+                drawer, tBar, R.string.open, R.string.close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
     @Override
@@ -48,11 +63,40 @@ public class TestToolbar extends AppCompatActivity {
                 message = "You clicked on help";
                 break;
             case R.id.textItem:
-                message = "You clicked on mail";
+                message = "You clicked on the overflow menu";
                 break;
         }
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         return true;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected( MenuItem item) {
+        String message = null;
+
+        switch(item.getItemId())
+        {
+            case R.id.chatPage:
+                Intent goChatPage = new Intent(TestToolbar.this, ChatRoomActivity.class);
+                startActivity(goChatPage);
+                break;
+            case R.id.weatherPage:
+                Intent goWeatherPage = new Intent(TestToolbar.this, WeatherForecast.class);
+                startActivity(goWeatherPage);
+                break;
+            case R.id.loginPage:
+                Intent goLoginPage = new Intent(TestToolbar.this, MainActivity.class);
+                setResult(500);
+                finish();
+                //startActivity(goLoginPage);
+                break;
+        }
+
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        //Toast.makeText(this, "NavigationDrawer: " + message, Toast.LENGTH_LONG).show();
+        return false;
     }
 
 }

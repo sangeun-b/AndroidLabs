@@ -45,4 +45,11 @@
     <string name="icon2">photo</string>
     <string name="icon3">search</string>
 
+    <string name="item1">Chat Page</string>
+    <string name="item2">Weather Forecast</string>
+    <string name="item3">Go back to login</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+
 </resources>

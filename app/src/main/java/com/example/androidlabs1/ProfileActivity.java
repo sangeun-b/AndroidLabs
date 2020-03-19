@@ -48,8 +48,8 @@ public class ProfileActivity extends AppCompatActivity {
         Button toolbarbtn = (Button)findViewById(R.id.toolbutton);
         toolbarbtn.setOnClickListener(btn->{
             Intent goToolBar = new Intent(ProfileActivity.this, TestToolbar.class);
-            startActivity(goToolBar);
-            //startActivityForResult(goToolBar, 1);
+            //startActivity(goToolBar);
+            startActivityForResult(goToolBar, 1);
         });
 
         Log.e(ACTIVITY_NAME, "In function:" + "onCreate");
@@ -71,6 +71,9 @@ public class ProfileActivity extends AppCompatActivity {
             mImageButton = (ImageButton) findViewById(R.id.ib1);
             mImageButton.setImageBitmap(imageBitmap);
 
+        }
+        if(resultCode==500){
+            finish();
         }
       //  Log.e(ACTIVITY_NAME, "In function:" + "onActivityResult");
 

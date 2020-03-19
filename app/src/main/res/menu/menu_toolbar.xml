@@ -26,5 +26,5 @@
     <item android:id="@+id/textItem"
         android:orderInCategory="200"
         app:showAsAction="never"
-        android:title="About"/>s
+        android:title="About"/>
 </menu>
